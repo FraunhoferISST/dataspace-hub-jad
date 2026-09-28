@@ -48,5 +48,18 @@ edc:
       enabled: true
       adminScope:
         enabled: true
+    transferTypes:
+      - transferType: "https://w3id.org/dspace-sig/profile/http-pull"
+        endpointType: "https://w3id.org/dspace-sig/profile/http-pull"
+        endpoint: "http://file-sharing-app.localhost/api/dataplane/files"
+        tokenSource: "provider"
+        txRenewalSupport: false
+        claimMappings:
+          - from: "flow.metadata.fileId"
+            to: "fileId"
+            optional: true
+          - from: "flow.participantContextId"
+            to: "participantContextId"
+            optional: false
 
 # add other overrides here, such as image tags, pull policies, etc.
